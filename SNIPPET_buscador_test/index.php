@@ -84,7 +84,7 @@ $members = $user->getRows();
                     ?>
                     
                    
-                        <div class="card">
+                    <div class="card">
                         <div class="card-body">
                             <?php echo $row['name']; ?>
                             <br>
