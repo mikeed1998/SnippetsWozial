@@ -38,7 +38,7 @@ if(!empty($_POST['filter'])){
     ); 
     $sortKey = key($sortArr[$sortVal]); 
     $conditions[$sortKey] = $sortArr[$sortVal][$sortKey]; 
-} 
+}
  
 // Get members data based on search and filter 
 $members = $user->getRows($conditions); 
@@ -46,16 +46,21 @@ $members = $user->getRows($conditions);
 if(!empty($members)){ 
     $i = 0; 
     foreach($members as $row){ $i++; 
-        echo '<tr>'; 
-        echo '<td>'.$i.'</td>'; 
-        echo '<td>'.$row['name'].'</td>'; 
-        echo '<td>'.$row['email'].'</td>'; 
-        echo '<td>'.$row['gender'].'</td>'; 
-        echo '<td>'.$row['country'].'</td>'; 
-        echo '<td>'.$row['created'].'</td>'; 
-        $status = ($row['status'] == 1)?'Active':'Inactive'; 
-        echo '<td>'.$status.'</td>'; 
-        echo '</tr>'; 
+        echo '
+            <div class="container-fluid">
+                <div class="row">';
+                echo '<div class="col-md-4 px-5">'; 
+                        echo ''.$i.''; 
+                        echo ''.$row['name'].''; 
+                        echo ''.$row['email'].''; 
+                        echo ''.$row['gender'].''; 
+                        echo ''.$row['country'].''; 
+                        echo ''.$row['created'].''; 
+                        $status = ($row['status'] == 1)?'Active':'Inactive'; 
+                        echo ''.$status.''; 
+        echo '       </div>
+                </div>
+            </div>'; 
     } 
 }else{ 
     echo '<tr><td colspan="7">No members(s) found...</td></tr>'; 
