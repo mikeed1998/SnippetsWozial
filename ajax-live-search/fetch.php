@@ -1,6 +1,7 @@
 <?php
 $connect = mysqli_connect("localhost", "root", "", "customer_ajax");
 $output = '';
+
 if(isset($_POST["query"]))
 {
 	$search = mysqli_real_escape_string($connect, $_POST["query"]);
@@ -18,7 +19,9 @@ else
 	$query = "
 	SELECT * FROM tbl_customer ORDER BY CustomerID";
 }
+
 $result = mysqli_query($connect, $query);
+
 if(mysqli_num_rows($result) > 0)
 {
 	$output .= '<div class="table-responsive">
