@@ -38,7 +38,7 @@ if(!empty($_POST['filter'])){
     ); 
     $sortKey = key($sortArr[$sortVal]); 
     $conditions[$sortKey] = $sortArr[$sortVal][$sortKey]; 
-} 
+}
  
 // Get members data based on search and filter 
 $members = $user->getRows($conditions); 

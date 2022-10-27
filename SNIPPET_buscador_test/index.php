@@ -59,10 +59,47 @@ $members = $user->getRows();
     </div>
 </div>
 
+
+            <?php 
+                if(!empty($members)){ $i = 0; 
+                    foreach($members as $row){ $i++; 
+            ?>
+            <?php
+                echo '
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 border">
+                                '. $i .'
+                                '. $row['name'] .'
+                                '. $row['email'] .'
+                                '. $row['gender'] .'
+                                '. $row['country'] .'
+                                '. $row['created'] .'
+                                ('. $row['status'] .' == 1)?"Active":"Inactive"
+                            </div>
+                        </div>
+                    </div>
+                ';
+            ?>
+                        <?php echo $i; ?>
+                        <?php echo $row['name']; ?>
+                        <?php echo $row['email']; ?>
+                        <?php echo $row['gender']; ?>
+                        <?php echo $row['country']; ?>
+                        <?php echo $row['created']; ?>
+                        <?php echo ($row['status'] == 1)?'Active':'Inactive'; ?>
+                    
+            <?php } }else{ ?>
+                No member(s) found...
+            <?php } ?>
+
+
+<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+
 <div class="main-content">
     <div class="loading-overlay" style="display: none;"><div class="overlay-content">Loading.....</div></div>
     <table class="table table-striped">
-        <!--
         <thead>
             <tr>
                 <th>#</th>
@@ -74,103 +111,6 @@ $members = $user->getRows();
                 <th>Status</th>
             </tr>
         </thead>
-        //-->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <?php 
-                        if(!empty($members)){ $i = 0; 
-                            foreach($members as $row){ $i++; 
-                    ?>
-                    
-                   
-                        <div class="card">
-                        <div class="card-body">
-                            <?php echo $row['name']; ?>
-                            <br>
-                            <?php echo $row['email']; ?>
-                            <br>
-                            <?php echo $row['gender']; ?>
-                            <br>
-                            <?php echo $row['country']; ?>
-                            <br>
-                            <?php echo $row['created']; ?>
-                            <br>
-                            <?php echo ($row['status'] == 1)?'Active':'Inactive'; ?>
-                        </div>  
-                    </div>
-
-                    
-
-                    <?php
-                        /*
-                        echo '
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            '. $row['name'] .'
-                                        </div>
-                                        <div class="col-md-12">
-                                            '. $row['email'] .'
-                                        </div>
-                                        <div class="col-md-12">
-                                            '. $row['gender'] .'
-                                        </div>
-                                        <div class="col-md-12">
-                                            '. $row['country'] .'
-                                        </div>
-                                        <div class="col-md-12">
-                                            '. $row['created'] .'
-                                        </div>
-                                        <div class="col-md-12">
-                                            '. ($row['status'] == 1)?'Active':'Inactive' .'
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ';
-                        */
-                    ?>
-
-                    <!--
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <?php echo $row['name']; ?>
-                                </div>
-                                <div class="col-md-12">
-                                    <?php echo $row['email']; ?>
-                                </div>
-                                <div class="col-md-12">
-                                    <?php echo $row['gender']; ?>
-                                </div>
-                                <div class="col-md-12">
-                                    <?php echo $row['country']; ?>
-                                </div>
-                                <div class="col-md-12">
-                                    <?php echo $row['created']; ?>
-                                </div>
-                                <div class="col-md-12">
-                                    <?php echo ($row['status'] == 1)?'Active':'Inactive'; ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    //-->
-
-                    <?php } }else{ ?>
-                        <div class="row">
-                            <div class="col">
-                                No member(s) found...
-                            </div>
-                        </div>
-                    <?php } ?>
-                </div>
-            </div>
-        </div>
-
         <tbody id="userData">
             <?php 
             if(!empty($members)){ $i = 0; 
