@@ -39,15 +39,18 @@
                 }
 
                 $imagenes = array();
-                $dir = dir($dir_images);
 
-                while(($archivo = $dir->read()) != false) {
-                    if($archivo != 'principal.jpg' && (strpos($archivo, 'jpg') || strpos($archivo, 'jpeg'))) {
-                        $imagenes[] = $dir_images . $archivo;
+                if(file_exists($dir_images)) {
+                    $dir = dir($dir_images);
+
+                    while(($archivo = $dir->read()) != false) {
+                        if($archivo != 'principal.jpg' && (strpos($archivo, 'jpg') || strpos($archivo, 'jpeg'))) {
+                            $imagenes[] = $dir_images . $archivo;
+                        }
                     }
+    
+                    $dir->close();
                 }
-
-                $dir->close();
             }
         } else {
             echo "Error al procesar la petición";
@@ -85,7 +88,9 @@
                             <a href="#" class="nav-link">Catalogo</a>
                         </li>
                     </ul>
-                    <a href="carrito.php" class="btn btn-primary">Carrito</a>
+                    <a href="checkout.php" class="btn btn-primary">
+                        Carrito<span id="num_cart" class="badge bg-secondary"><?php echo $num_cart; ?></span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -134,7 +139,7 @@
                     </p>
                     <div class="d-grid gap-3 col-10 mx-auto">
                         <button class="btn btn-primary" type="button">Comprar Ahora</button>
-                        <button class="btn btn-outline-primary" type="button">Agregar al carrito</button>
+                        <button class="btn btn-outline-primary" type="button" onclick="addProducto(<?php echo $id; ?>, '<?php echo $token_tmp; ?>')">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -142,5 +147,25 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script>
+        function addProducto(id, token) {
+            let url = 'clases/carrito.php';
+            let formData = new FormData();
+            formData.append('id', id);
+            formData.append('token', token);
+
+            fetch(url, {
+                method: 'POST',
+                body: formData,
+                mode: 'cors'
+            }).then(response => response.json())
+            .then(data => {
+                if(data.ok){
+                    let elemento = document.getElementById("num_cart");
+                    elemento.innerHTML = data.numero;
+                }
+            })
+        }
+    </script>
 </body>
 </html>
