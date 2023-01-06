@@ -36,7 +36,7 @@
     <header>
         <div class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a href="#" class="navbar-brand">
+                <a href="index.php" class="navbar-brand">
                     <strong>Tienda Online</strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,17 +98,17 @@
                                     <td><?php echo $nombre; ?></td>
                                     <td><?php echo MONEDA . number_format($precio_desc, 2, '.', ','); ?></td>
                                     <td>
-                                        <input type="number" min="1" max="10" step="1" value="<?php echo $cantidad ?>" size="5" id="cantidad_<?php echo $_id; ?>" onchange="">
+                                        <input type="number" min="1" max="10" step="1" value="<?php echo $cantidad ?>" size="5" id="cantidad_<?php echo $_id; ?>" onchange="actualizaCantidad(this.value, <?php echo $_id; ?>);">
                                     </td>
                                     <td>
-                                        <div id="subtotal_<?php echo $_id; ?>" name="subtotal[]"><?php echo MONEDA . number_format($subtotal, 2, '.', ',') ?></div>
+                                        <div id="subtotal_<?php echo $_id; ?>" name="subtotal[]"><?php echo MONEDA . number_format($subtotal, 2, '.', ','); ?></div>
                                     </td>
                                     <td>
                                         <a href="#" id="eliminar" class="btn btn-warning btn-sm" data-bs-id="<?php echo $_id; ?>" data-ds-toogle="modal" data-bs-target="eliminaModal">Eliminar</a>
                                     </td>
                                 </tr>
                                 <?php } ?> 
-                             <?php } ?>   
+                             
                                 <tr>
                                     <td colspan="3"></td>
                                     <td colspan="2">
@@ -116,6 +116,7 @@
                                     </td>
                                 </tr>
                     </tbody>
+                    <?php } ?>  
                 </table>
             </div>
             <div class="row">
@@ -128,11 +129,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script>
-        function addProducto(id, token) {
-            let url = 'clases/carrito.php';
+        function actualizaCantidad(cantidad, id) {
+            let url = 'clases/actualizar_carrito.php';
             let formData = new FormData();
+            formData.append('action', 'agregar');
             formData.append('id', id);
-            formData.append('token', token);
+            formData.append('cantidad', cantidad);
 
             fetch(url, {
                 method: 'POST',
@@ -141,8 +143,11 @@
             }).then(response => response.json())
             .then(data => {
                 if(data.ok){
-                    let elemento = document.getElementById("num_cart");
-                    elemento.innerHTML = data.numero;
+                    let divsubtotal = document.getElementById('subtotal_' + id);
+                    divsubtotal.innerHTML = data.sub;
+
+                    //let elemento = document.getElementById("num_cart");
+                    //elemento.innerHTML = data.numero;
                 }
             })
         }
