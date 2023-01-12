@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertir</title>
+    <script src="js/jsPDF/dist/jspdf.umd.js"></script>
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+
+        function generatePDF() {
+            var doc = new jsPDF();
+
+            doc.text(20, 20, 'Hello world!');
+            doc.text(20, 20, 'This is client-side Javascript to generate a PDF');
+            
+            // Add mew page
+            doc.addPage();
+            doc.text(20, 20, 'Visit www.web.com');
+            doc.text(20, 20, 'This is a new page in PDF');
+
+
+            // Save the PDF
+            doc.save('document.pdf');
+        }
+
+        // Generate PDF document with landscape orientation
+        function generatePDF_2() {
+            var doc = new jsPDF({
+                orientation: 'landscape'
+            });
+
+            doc.text(20, 20, 'Hello world!');
+            doc.text(20, 30, 'This is client-side Javascript to generate a PDF');
+
+            doc.save('document.pdf');
+
+        }
+
+        function generatePDF_3() {
+            var doc = new jsPDF();
+	
+            doc.text(20, 20, 'This is the default font.');
+
+            doc.setFont("courier", "normal");
+            doc.text("This is courier normal.", 20, 30);
+
+            doc.setFont("times", "italic");                                                                                                                                                                                                     
+            doc.text("This is times italic.", 20, 40);
+
+            doc.setFont("helvetica", "bold");
+            doc.text("This is helvetica bold.", 20, 50);
+
+            doc.setFont("courier", "bolditalic");
+            doc.text("This is courier bolditalic.", 20, 60);
+
+            doc.setFont("times", "normal");
+            doc.text("This is centred text.", 105, 80, null, null, "center");
+            doc.text("And a little bit more underneath it.", 105, 90, null, null, "center");
+            doc.text("This is right aligned text", 200, 100, null, null, "right");
+            doc.text("And some more", 200, 110, null, null, "right");
+            doc.text("Back to left", 20, 120);
+
+            doc.text("10 degrees rotated", 20, 140, null, 10);
+            doc.text("-10 degrees rotated", 20, 160, null, -10);
+
+            // Save the PDF
+            doc.save('document.pdf');
+        }
+
+        function generatePDF_4() {
+            var doc = new jsPDF();
+
+            doc.setFontSize(20);
+            doc.text('This is a title', 20, 30);
+
+            doc.setFontSize(16);
+            doc.text('This is come normal sized text underneath', 20, 30);
+
+            doc.setFontSize(16);
+
+            // Save the PDF
+            doc.save('document.pdf');
+        }
+
+        function generatePDF_5() {
+            var doc = new jsPDF();
+
+            doc.setTextColor(100);
+            doc.text('This is gray', 20, 20);
+
+            doc.setTextColor(150);
+            doc.text('This is light gray', 20, 30);
+
+            doc.setTextColor(255, 0, 0);
+            doc.text('This is red', 20, 40);
+
+            doc.setTextColor(0, 255, 0);
+            doc.text('This is green', 20, 50);
+
+            doc.setTextColor(0, 0, 255);
+            doc.text('This is blue', 20, 60);
+
+            doc.setTextColor("red");
+            doc.text('This is red', 60, 40);
+
+            doc.setTextColor("green");
+            doc.text('This is green', 60, 50);
+
+            doc.setTextColor("blue");
+            doc.text('This is blue', 60, 60);
+
+            // Save the PDF
+            doc.save('document.pdf');
+        }
+
+        function generatePDF_6() {
+            var doc = new jsPDF();
+
+            doc.setFontSize(24);
+            doc.text('This is a title', 20, 20);
+
+            doc.setFontSize(16);
+            doc.text('This is come normal sized text underneath', 20, 30);
+
+            doc.addImage("images/sinkopeso.jpg", "JPEG", 15, 40, 100, 100);
+
+            // Save the PDF
+            doc.save('document.pdf');
+        }
+    </script>
+</head>
+<body>
+    <!-- Trigger button -->
+    <button onclick="generatePDF_6()">Generate PDF</button>
+</body>
+</html>

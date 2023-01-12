@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+    .wrapper {
+        width: 675px;
+        margin: auto;
+        background-color: #f2f3f4;
+        color: #000;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 15px;
+    }
+
+    .wrapper img {
+        max-width: 100%;
+    }
+
+    .wrapper button {
+        float: right;
+        border: 1px solid #087bff;
+        background-color: #087bff;
+        color: #fff;
+        padding: 4px 8px;
+        font-size: 15px;
+    }
+
+    .wrapper button:hover {
+        background-color: #fff;
+        color: #087bff;
+    }
+</style>
+
+<!-- html2canvas library -->
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<!-- jsPDF library -->
+<script src="js/jsPDF/dist/jspdf.umd.js"></script>
+
+<script>
+    window.jsPDF = window.jspdf.jsPDF;
+
+    // Convert HTML content to PDF
+    function Convert_HTML_To_PDF() {
+        var doc = new jsPDF();
+	
+        // Source HTMLElement or a string containing HTML.
+        var elementHTML = document.querySelector("#contentToPrint");
+
+        doc.html(elementHTML, {
+            callback: function(doc) {
+                // Save the PDF
+                doc.save('document-html.pdf');
+               },
+            margin: [10, 10, 10, 10],
+            autoPaging: 'text',
+            x: 0,
+            y: 0,
+            width: 190, //target width in the PDF document
+            windowWidth: 675 //window width in CSS pixels
+        });
+    }
+</script>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <!-- Trigger button -->
+            <button onclick="Convert_HTML_To_PDF();">Convert HTML to PDF</button>
+
+            <!-- HTML content for PDF creation -->
+            <div id="contentToPrint">
+                <h1>What is Lorem Ipsum?</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <h2>new</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio magni dicta quam qui, fugit ipsam! Suscipit voluptate, unde et quod ad tempora minima quas laudantium laborum magnam commodi dolore ab assumenda esse, dolor similique eligendi! Necessitatibus beatae saepe, natus maxime minima tempora sit nobis ipsum facilis quibusdam repellat explicabo aperiam!</p>
+                <img src="images/sinkopeso.jpg" alt="sinko">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
