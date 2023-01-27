@@ -15,7 +15,7 @@
         <div class="row position-relative">
             <div class="col-12 text-end position-absolute top-0 start-50 translate-middle-x z-3">
                 <div class="col-6 mt-4 text-start position-relative bg-warning" style="max-height: 633px; overflow: scroll;" id="categorias_base">
-                Hoteles
+                    Hoteles
                     <ul>
                         <li>1 Lorem, ipsum dolor.</li>
                         <li>2 Lorem, ipsum dolor.</li>
@@ -52,7 +52,6 @@
                         <li>3 Lorem, ipsum dolor.</li>
                         <li>4 Lorem, ipsum dolor.</li>
                     </ul>
-                    
                 </div>
                 <div class="col-6"></div>
             </div>
