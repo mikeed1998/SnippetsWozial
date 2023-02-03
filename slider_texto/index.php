@@ -14,7 +14,7 @@
     <div class="container-fluid">
         <div class="row position-relative">
             <div class="col-12 text-end position-absolute top-0 start-50 translate-middle-x z-3">
-                <div class="col-6 mt-4 text-start position-relative bg-warning" style="max-height: 633px; overflow: scroll;" id="categorias_base">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-4 text-start position-relative bg-warning" style="max-height: 633px; overflow: scroll;" id="categorias_base">
                     Hoteles
                     <ul>
                         <li>1 Lorem, ipsum dolor.</li>
@@ -61,10 +61,14 @@
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <img src="ocean.png" alt="" class="img-fluid">
+                                <div class="image col-md-6 col-xs-12 p-0 d-flex justify-content-start align-items-end" style="width: auto; height: 600px; background-image: url(ocean.png); background-size: cover;">
+                                    <div class="d-flex align-items-center justify-content-center" style="background: #F7F0EB; width: 120px; height: 120px; background-size: cover;">
+                                        <img class="img-fluid" src="forest.png" alt="" style="background-size: cover;">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mt-5">
                             <div class="col-12 text-center">
                                 <button id="mover"> * * * </button>
                             </div>
@@ -80,10 +84,14 @@
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <img src="ocean.png" alt="" class="img-fluid">
+                                <div class="image col-md-6 col-xs-12 p-0 d-flex justify-content-start align-items-end" style="width: auto; height: 600px; background-image: url(ocean.png); background-size: cover;">
+                                    <div class="d-flex align-items-center justify-content-center" style="background: #F7F0EB; width: 120px; height: 120px; background-size: cover;">
+                                        <img class="img-fluid" src="forest.png" alt="" style="background-size: cover;">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mt-5">
                             <div class="col-12 text-center">
                                 <button id="mover"> * * * </button>
                             </div>
@@ -99,6 +107,7 @@
             </div>
         </div>
     </div>
+</body>
 
     <!-- <div class="container-fluid">
         <div class="row">
