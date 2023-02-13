@@ -11,17 +11,16 @@
 <body>
 
     <div class="container-fluid px-5">
-    <div class="allTemplateName">
-        <div class="row position-relative">
-            <div class="col-12 text-end position-absolute top-0 start-50 translate-middle-x z-3">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-4 text-start position-relative bg-warning" style="max-height: 633px; overflow: scroll;" id="categorias_base">
-                    <li data-table="#table1">A</li>
-                    <li data-table="#table2">B</li>
-                    <li data-table="#table3">C</li>
+        <div class="allTemplateName">
+            <div class="row position-relative">
+                <div class="col-12 text-end position-absolute top-0 start-50 translate-middle-x z-3">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-4 text-start position-relative bg-warning px-5" style="max-height: 633px; overflow: scroll;" id="categorias_base">
+                        <li data-table="#table1">A</li>
+                        <li data-table="#table2">B</li>
+                        <li data-table="#table3">C</li>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
-            </div>
-            
                 <div class="con">
                     <table id="table1">
                         <tr>
@@ -71,15 +70,9 @@
                             </td>
                         </tr>
                     </table>
-                    <table id="table3">
-                        <tr>
-                            <td>Table 3</td>
-                        </tr>
-                    </table>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
     
