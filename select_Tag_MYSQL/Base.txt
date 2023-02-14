@@ -1,0 +1,36 @@
+CREATE DATABASE VIDEO;
+USE VIDEO;
+CREATE TABLE datos (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, nombre varchar(45));
+
+INSERT INTO datos (nombre) VALUES
+('Aguascalientes'),
+('Baja California'),
+('Baja California Sur'),
+('Campeche'),
+('Chiapas'),
+('Chihuahua'),
+('Coahuila de Zaragoza'),
+('Colima'),
+('Durango'),
+('Cuidad de México'),
+('Guanajuato'),
+('Guerrero'),
+('Hidalgo'),
+('Jalisco'),
+('Michoacán de Ocampo'),
+('Morelos'),
+('Nayarit'),
+('Nuevo León'),
+('Oaxaca'),
+('Puebla'),
+('Querétaro'),
+('Quintana Roo'),
+('San Luis Potosí'),
+('Sinaloa'),
+('Sonora'),
+('Tabasco'),
+('Tamaulipas'),
+('Tlaxcala'),
+('Veracruz'),
+('Yucatán'),
+('Zacatecas');
