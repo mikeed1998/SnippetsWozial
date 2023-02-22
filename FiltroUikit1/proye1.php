@@ -41,69 +41,66 @@
 </head>
 
 <body>
-    <div class="uk-flex uk-flex-wrap uk-child-width-1-1 uk-child-width-1-1@l">
-        <div class="uk-padding-large">
-            <h1 class="uk-h1 uk-text-center">Products filter</h1>
-            <div uk-filter="target: .filter" class="uk-width-1-1 filter-main">
-                <div class="uk-flex uk-flex-middle uk-flex-column uk-width-1-2 uk-margin-small-bottom filter-options-container">
-                    <div class="uk-flex uk-flex-center uk-flex-left@s uk-grid-small uk-grid-divider uk-child-width-auto uk-margin-small" uk-grid>
-                        <div>
-                            <ul>
-                                <?php
-                                    $consulta = mysqli_query($conn, "SELECT * FROM categorias_proyectos");
-                                    while($row = mysqli_fetch_assoc($consulta)) {
-                                        $_id = $row['id'];
-                                        echo '<p>'.$row['categoria'].'</p>';
-                                        $subconsulta = mysqli_query($conn, "SELECT * FROM categorias_proyectos_detalles");                                                                       
-                                        while($subrow = mysqli_fetch_assoc($subconsulta)) {
-                                            if($subrow['categoria_proyecto'] == $row['id'])
-                                            echo '
-                                                <li onclick="resetSearchBar();" uk-filter-control="filter: [tag=\'f'.$subrow['id'].'\'];"><a href="#">'.$subrow['titulo'].'</a></li>
-                                            ';
+    <div class="container-fluid">
+        <div uk-filter="target: .filter" class="uk-width-1-1 filter-main">
+            <div class="row">
+                <div class="col-4 py-5 mt-5">
+                    <div class="uk-flex uk-flex-middle uk-flex-column uk-width-1-2 uk-margin-small-bottom filter-options-container">
+                        <div class="uk-flex uk-flex-center uk-flex-left@s uk-grid-small uk-grid-divider uk-child-width-auto uk-margin-small" uk-grid>
+                            <div>
+                                <ul>
+                                    <?php
+                                        $consulta = mysqli_query($conn, "SELECT * FROM categorias_proyectos");
+                                        while($row = mysqli_fetch_assoc($consulta)) {
+                                            $_id = $row['id'];
+                                            echo '<h3 class="py-2">'.$row['categoria'].'</h3>';
+                                            $subconsulta = mysqli_query($conn, "SELECT * FROM categorias_proyectos_detalles");                                                                       
+                                            while($subrow = mysqli_fetch_assoc($subconsulta)) {
+                                                if($subrow['categoria_proyecto'] == $row['id']) {
+                                                    echo '
+                                                        <li onclick="resetSearchBar();" uk-filter-control="filter: [tag=\'f'.$subrow['id'].'\'];"><a href="#">'.$subrow['titulo'].'</a></li>
+                                                    ';
+                                                }
+                                            }
                                         }
-                                    }
-                                ?>
-                            </ul>
+                                    ?>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <ul class="filter uk-child-width-1-1 uk-child-width-1-2@l uk-text-right uk-dark uk-animation-toggle" uk-grid tabindex="0">
-                    <?php
-                        $con = mysqli_query($conn, "SELECT * FROM categorias_proyectos_detalles");
-                        while($row2 = mysqli_fetch_assoc($con)) {
-                            echo '
-                                <li class="skills-el" tag=\'f'.$row2['id'].'\' data-name=\''.$row2['id'].'\'>
-                                    <div class="uk-card uk-card-default uk-card-body">
-                                        <div>   
-                                            <div class="row">
-                                         
-                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                    <div class="image col-md-6 col-xs-12 p-0 d-flex justify-content-start align-items-end" style="width: auto; height: 600px; background-image: url('.$row2['imagen'].'); background-size: cover;">
-                                                        <div class="d-flex align-items-center justify-content-center" style="background: #F7F0EB; width: 120px; height: 120px; background-size: cover;">
-                                                            <img class="img-fluid" src="forest.png" alt="" style="background-size: cover;">
+                <div class="col-8">
+                    <ul class="filter uk-child-width-1-1 uk-child-width-1-1@l uk-text-right uk-dark uk-animation-toggle" uk-grid tabindex="0">
+                        <?php
+                            $con = mysqli_query($conn, "SELECT * FROM categorias_proyectos_detalles");
+                            while($row2 = mysqli_fetch_assoc($con)) {
+                                echo '
+                                    <li class="skills-el" tag=\'f'.$row2['id'].'\' data-name=\''.$row2['id'].'\'>
+                                        <div class="uk-card uk-card-default uk-card-body">
+                                            <div>   
+                                                <div class="row">                 
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="image col-md-6 col-xs-12 p-0 d-flex justify-content-start align-items-end" style="width: auto; height: 600px; background-image: url('.$row2['imagen'].'); background-size: cover;">
+                                                            <div class="d-flex align-items-center justify-content-center" style="background: #F7F0EB; width: 120px; height: 120px; background-size: cover;">
+                                                                <img class="img-fluid" src="forest.png" alt="" style="background-size: cover;">
+                                                            </div>
                                                         </div>
+                                                    </div>
+                                                </div>             
+                                                <div class="row">
+                                                    <div class="col-12 text-start">
+                                                        <h1>'.$row2['titulo'].'</h1>
+                                                        <p>'.$row2['descripcion'].'</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row mt-5">
-                                                <div class="col-12 text-center">
-                                                    <button id="mover"> * * * </button>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-12 text-start">
-                                                    <h1>'.$row2['titulo'].'</h1>
-                                                    <p>'.$row2['descripcion'].'</p>
-                                                </div>
-                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                            ';
-                        }
-                    ?>
-                </ul>
+                                    </li>
+                                ';
+                            }
+                        ?>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
