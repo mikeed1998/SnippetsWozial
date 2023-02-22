@@ -80,7 +80,7 @@
                                             <div>   
                                                 <div class="row">                 
                                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                        <div class="image col-md-6 col-xs-12 p-0 d-flex justify-content-start align-items-end" style="width: auto; height: 600px; background-image: url('.$row2['imagen'].'); background-size: cover;">
+                                                        <div class="image col-md-6 col-xs-12 p-0 d-flex justify-content-start align-items-end" style="width: auto; height: 600px; background-image: url(ocean.png); background-size: cover;">
                                                             <div class="d-flex align-items-center justify-content-center" style="background: #F7F0EB; width: 120px; height: 120px; background-size: cover;">
                                                                 <img class="img-fluid" src="forest.png" alt="" style="background-size: cover;">
                                                             </div>
