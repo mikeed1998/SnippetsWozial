@@ -4,7 +4,7 @@
     $pass = '';
     $db = 'casapiel';
 
-    $conn = mysqli_connect($host, $user, $pass, $db);
+    $conn = new mysqli($host, $user, $pass, $db);
 ?>
 
 <!DOCTYPE html>
@@ -57,10 +57,11 @@
             <div>
                 <ul class="uk-flex uk-flex-center uk-flex-left@s uk-subnav uk-subnav-pill">
                 <?php
-                    $consult = mysqli_query($conn, "SELECT * FROM categorias_proyectos");
-                    while($row = mysqli_fetch_assoc($consult)) {
+                    $sql = "SELECT id, titulo FROM categorias_proyectos_detalles";
+                    $consult =  $conn->query($sql);
+                    while($row = $consult->fetch_assoc()) {
                         echo '
-                            <li onclick="resetSearchBar();" uk-filter-control="filter: [tag="f'.$row['id'].'"];"><a href="#">'.$row['categoria'].'</a></li>
+                            <li onclick="resetSearchBar();" uk-filter-control="filter: [tag="f'.$row['id'].'"];"><a href="#">'.$row['titulo'].'</a></li>
                         ';
                     }
                 ?>
