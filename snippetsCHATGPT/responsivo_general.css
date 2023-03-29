@@ -1,0 +1,124 @@
+/*///////////////////////////////////////////////////*/
+/*///////// Responsivo general escritorio ///////////*/
+/*///////////////////////////////////////////////////*/
+
+/* Pantallas con resolución 1920 x 1080 pixels (Full HD) */
+@media screen and (max-width: 1920px) {
+    /* Estilos para pantalla de escritorio */
+}
+  
+/* Pantallas con resolución 1440 x 900 pixels (WXGA+) */
+@media screen and (max-width: 1440px) {
+    /* Estilos para pantalla de escritorio */
+}
+  
+/* Pantallas con resolución 1366 x 768 pixels (HD) */
+@media screen and (max-width: 1366px) {
+    /* Estilos para pantalla de escritorio */
+}
+  
+/* Pantallas con resolución 1280 x 800 pixels (WXGA) */
+@media screen and (max-width: 1280px) {
+    /* Estilos para pantalla de escritorio */
+}
+  
+/* Pantallas con resolución 1280 x 1024 pixels (SXGA) */
+@media screen and (max-width: 1280px) {
+    /* Estilos para pantalla de escritorio */
+}
+
+/*///////////////////////////////////////////////////*/
+/*/////////// Responsivo general tablets ////////////*/
+/*///////////////////////////////////////////////////*/
+
+/* iPad Pro 12.9" */
+@media screen and (max-width: 1024px) and (min-width: 834px) {
+    /* Estilos para tablet en modo horizontal */
+}
+  
+@media screen and (max-width: 834px) {
+    /* Estilos para tablet en modo vertical */
+}
+  
+/* iPad Pro 11" */
+@media screen and (max-width: 834px) {
+    /* Estilos para tablet en modo vertical */
+}
+  
+/* iPad Air 10.9" */
+@media screen and (max-width: 810px) {
+    /* Estilos para tablet en modo vertical */
+}
+  
+/* iPad 10.2" */
+@media screen and (max-width: 768px) {
+    /* Estilos para tablet en modo vertical */
+}
+  
+/* Samsung Galaxy Tab S7+ 12.4" */
+@media screen and (max-width: 1100px) and (min-width: 962px) {
+    /* Estilos para tablet en modo horizontal */
+}
+  
+@media screen and (max-width: 962px) {
+    /* Estilos para tablet en modo vertical */
+}
+  
+/* Samsung Galaxy Tab S7 11" */
+@media screen and (max-width: 840px) {
+    /* Estilos para tablet en modo vertical */
+}
+  
+/* Microsoft Surface Pro 7 12.3" */
+@media screen and (max-width: 1024px) and (min-width: 856px) {
+    /* Estilos para tablet en modo horizontal */
+}
+  
+@media screen and (max-width: 856px) {
+    /* Estilos para tablet en modo vertical */
+}
+  
+/* Amazon Fire HD 10 10.1" */
+@media screen and (max-width: 960px) {
+    /* Estilos para tablet en modo vertical */
+}
+
+/*///////////////////////////////////////////////////*/
+/*///////// Responsivo general mobiles //////////////*/
+/*///////////////////////////////////////////////////*/
+
+/* iPhone 12 Pro Max */
+@media screen and (max-width: 428px) {
+    /* Estilos para pantalla de teléfono */
+}
+  
+/* iPhone 12, 12 Pro */
+@media screen and (max-width: 390px) {
+    /* Estilos para pantalla de teléfono */
+}
+  
+/* iPhone 12 mini */
+@media screen and (max-width: 360px) {
+    /* Estilos para pantalla de teléfono */
+}
+  
+/* Samsung Galaxy S21 Ultra */
+@media screen and (max-width: 1440px) {
+    /* Estilos para pantalla de teléfono */
+}
+  
+/* Samsung Galaxy S21, S21+ */
+@media screen and (max-width: 1080px) {
+    /* Estilos para pantalla de teléfono */
+}
+  
+/* Google Pixel 5 */
+@media screen and (max-width: 1080px) {
+    /* Estilos para pantalla de teléfono */
+}
+  
+/* OnePlus 8T */
+@media screen and (max-width: 1080px) {
+    /* Estilos para pantalla de teléfono */
+}
+

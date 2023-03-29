@@ -1,0 +1,16 @@
+@media only screen and (min-width: 1600px) {
+    /* Reglas CSS para pantallas de escritorio grandes */
+}
+  
+@media only screen and (min-width: 1366px) and (max-width: 1600px) {
+    /* Reglas CSS para pantallas de escritorio medianas */
+}
+  
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+    /* Reglas CSS para pantallas de escritorio pequeñas */
+}
+  
+@media only screen and (max-width: 1023px) {
+    /* Reglas CSS para pantallas de escritorio muy pequeñas */
+}
+  

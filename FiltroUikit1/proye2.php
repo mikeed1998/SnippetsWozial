@@ -58,7 +58,7 @@
                                             while($subrow = mysqli_fetch_assoc($subconsulta)) {
                                                 if($subrow['categoria_proyecto'] == $row['id']) {
                                                     echo '
-                                                        <li onclick="resetSearchBar();" uk-filter-control="filter: [tag=\'f'.$subrow['id'].'\'];"><a href="#">'.$subrow['titulo'].'</a></li>
+                                                        <li onclick="resetSearchBar();" uk-filter-control="filter: [tag=\'f'.$subrow['id'].'\'];"><a href="#" id="link">'.$subrow['titulo'].'</a></li>
                                                     ';
                                                 }
                                             }
@@ -148,5 +148,10 @@
             $(".uk-search-input").eq(0).val('').attr("uk-filter-control", "");
         }
     </script>
+    <script>
+    $(document).ready(function() {
+        document.getElementById("link").click();
+    });
+</script>
 </body>
 </html>
