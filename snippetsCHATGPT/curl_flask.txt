@@ -1,0 +1,81 @@
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/send-variable', methods=['POST'])
+def send_variable():
+    variable = request.form['variable']
+    return 'El valor de la variable es: {}'.format(variable)
+
+if __name__ == '__main__':
+    app.run()
+
+
+#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void) {
+    CURL *curl;
+    CURLcode res;
+
+    curl_global_init(CURL_GLOBAL_ALL);
+
+    curl = curl_easy_init();
+    if(curl) {
+        const char *data = "variable=10";
+        curl_easy_setopt(curl, CURLOPT_URL, "http://localhost:5000/send-variable");
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+        res = curl_easy_perform(curl);
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
+        }
+        curl_easy_cleanup(curl);
+    }
+
+    curl_global_cleanup();
+
+    return 0;
+}
+
+
+
+// cachar datos
+
+#include <stdio.h>
+#include <curl/curl.h>
+
+// Función que maneja la respuesta HTTP recibida por libcurl
+size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata) {
+    // Simplemente imprimimos la respuesta en la consola
+    printf("%.*s", (int)(size * nmemb), ptr);
+    return size * nmemb;
+}
+
+int main() {
+    CURL *curl;
+    CURLcode res;
+
+    // Inicializamos libcurl
+    curl = curl_easy_init();
+    if(curl) {
+        // Configuramos la URL a la que haremos la solicitud GET
+        curl_easy_setopt(curl, CURLOPT_URL, "http://localhost:5000/get_value");
+
+        // Asignamos la función de callback para manejar la respuesta HTTP
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+
+        // Ejecutamos la solicitud HTTP GET
+        res = curl_easy_perform(curl);
+
+        // Verificamos si hubo algún error
+        if(res != CURLE_OK) {
+            fprintf(stderr, "Error al realizar la solicitud: %s\n", curl_easy_strerror(res));
+        }
+
+        // Limpiamos los recursos utilizados por libcurl
+        curl_easy_cleanup(curl);
+    }
+
+    return 0;
+}

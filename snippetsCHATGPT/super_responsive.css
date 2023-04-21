@@ -1,0 +1,80 @@
+/*//////////////////////////////////////////////////////////*/
+/*////// Reglas CSS generales para dispositivos APPLE //////*/
+/*//////////////////////////////////////////////////////////*/
+
+/* Media queries para iPhone 5/5s/SE */
+@media only screen and (max-width: 320px) {
+    /* Reglas CSS específicas para dispositivos iPhone 5/5s/SE */
+}
+  
+/* Media queries para iPhone 6/6s/7/8/SE 2nd Gen */
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+    /* Reglas CSS específicas para dispositivos iPhone 6/6s/7/8/SE 2nd Gen */
+}
+  
+/* Media queries para iPhone 6+/6s+/7+/8+ */
+@media only screen and (min-width: 376px) and (max-width: 414px) {
+    /* Reglas CSS específicas para dispositivos iPhone 6+/6s+/7+/8+ */
+}
+  
+/* Media queries para iPhone X/XS/11 Pro */
+@media only screen and (min-width: 375px) and (max-width: 812px) and (-webkit-device-pixel-ratio: 3) {
+    /* Reglas CSS específicas para dispositivos iPhone X/XS/11 Pro */
+}
+  
+/* Media queries para iPhone XR/11 */
+@media only screen and (min-width: 414px) and (max-width: 896px) and (-webkit-device-pixel-ratio: 2) {
+    /* Reglas CSS específicas para dispositivos iPhone XR/11 */
+}
+  
+/* Media queries para iPhone XS Max/11 Pro Max */
+@media only screen and (min-width: 414px) and (max-width: 896px) and (-webkit-device-pixel-ratio: 3) {
+    /* Reglas CSS específicas para dispositivos iPhone XS Max/11 Pro Max */
+}
+  
+/* Media queries para iPad */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Reglas CSS específicas para dispositivos iPad */
+}
+  
+/* Media queries para iPad Pro */
+@media only screen and (min-width: 1024px) {
+    /* Reglas CSS específicas para dispositivos iPad Pro */
+}
+
+/* Media queries para MacBook de 12 pulgadas */
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+    /* Reglas CSS específicas para MacBook de 12 pulgadas */
+}
+  
+/* Media queries para MacBook Air de 11 pulgadas */
+@media only screen and (min-width: 1281px) and (max-width: 1366px) {
+    /* Reglas CSS específicas para MacBook Air de 11 pulgadas */
+}
+  
+/* Media queries para MacBook Air de 13 pulgadas */
+@media only screen and (min-width: 1367px) and (max-width: 1440px) {
+    /* Reglas CSS específicas para MacBook Air de 13 pulgadas */
+}
+  
+/* Media queries para MacBook Pro de 13 pulgadas */
+@media only screen and (min-width: 1441px) and (max-width: 1680px) {
+    /* Reglas CSS específicas para MacBook Pro de 13 pulgadas */
+}
+  
+/* Media queries para MacBook Pro de 15 pulgadas */
+@media only screen and (min-width: 1681px) and (max-width: 1920px) {
+    /* Reglas CSS específicas para MacBook Pro de 15 pulgadas */
+}
+  
+/* Media queries para MacBook Pro de 16 pulgadas */
+@media only screen and (min-width: 1921px) {
+    /* Reglas CSS específicas para MacBook Pro de 16 pulgadas */
+}
+
+/*//////////////////////////////////////////////////////////*/
+/*////// Reglas CSS generales para dispositivos TABLET//////*/
+/*//////////////////////////////////////////////////////////*/
+
+
+
