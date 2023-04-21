@@ -2,7 +2,7 @@
     $host = 'localhost';
     $user = 'root';
     $pass = '';
-    $db = 'casapiel';
+    $db = 'takasami';
 
     $conn = new mysqli($host, $user, $pass, $db);
 ?>
@@ -57,9 +57,14 @@
             <div>
                 <ul class="uk-flex uk-flex-center uk-flex-left@s uk-subnav uk-subnav-pill">
                 <?php
+<<<<<<< HEAD
                     $sql = "SELECT id, titulo FROM categorias_proyectos_detalles";
                     $consult =  $conn->query($sql);
                     while($row = $consult->fetch_assoc()) {
+=======
+                    $consult = mysqli_query($conn, "SELECT * FROM categorias_proyectos_detalles");
+                    while($row = mysqli_fetch_array($consult)) {
+>>>>>>> 509c519ebe28e263b54ea75f96aa8070d9853de5
                         echo '
                             <li onclick="resetSearchBar();" uk-filter-control="filter: [tag="f'.$row['id'].'"];"><a href="#">'.$row['titulo'].'</a></li>
                         ';
@@ -73,43 +78,22 @@
           </div>
         </div>
 
+    
+       
         <ul class="filter uk-child-width-1-1 uk-child-width-1-2@l uk-text-center uk-dark uk-animation-toggle" uk-grid tabindex="0">
-          <p class="skills-no-result uk-hidden uk-text-center uk-width-1-1 uk-margin-small-top uk-h4">No results</p>
-          <li class="skills-el" tag="f1" data-name="div 1">
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3 class="uk-h3 uk-margin-remove">Div 1</h3>
-            </div>
-          </li>
-          <li class="skills-el" tag="f1" data-name="div 2">
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3 class="uk-h3 uk-margin-remove">Div 2</h3>
-            </div>
-          </li>
-          <li class="skills-el" tag="f2" data-name="div 3">
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3 class="uk-h3 uk-margin-remove">Div 3</h3>
-            </div>
-          </li>
-          <li class="skills-el" tag="f3" data-name="div 4">
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3 class="uk-h3 uk-margin-remove">Div 4</h3>
-            </div>
-          </li>
-          <li class="skills-el" tag="f4" data-name="div 5">
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3 class="uk-h3 uk-margin-remove">Div 5</h3>
-            </div>
-          </li>
-          <li class="skills-el" tag="f5" data-name="div 6">
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3 class="uk-h3 uk-margin-remove">Div 6</h3>
-            </div>
-          </li>
-          <li class="skills-el" tag="f5" data-name="div 7">
-            <div class="uk-card uk-card-default uk-card-body">
-              <h3 class="uk-h3 uk-margin-remove">Div 7</h3>
-            </div>
-          </li>
+          	<p class="skills-no-result uk-hidden uk-text-center uk-width-1-1 uk-margin-small-top uk-h4">No results</p>
+          	<?php
+        		$consult = mysqli_query($conn, "SELECT * FROM categorias_proyectos_detalles");
+            	while($row = mysqli_fetch_array($consult)) {
+    	        	echo '
+						<li class="skills-el" tag="f'.$row['id'].'" data-name="'.$row['titulo'].'">
+			            	<div class="uk-card uk-card-default uk-card-body">
+            			  		<h3 class="uk-h3 uk-margin-remove">'.$row['titulo'].'</h3>
+        			    	</div>
+        			  	</li>
+			  		';
+            	}
+        	?>
         </ul>
 
       </div>

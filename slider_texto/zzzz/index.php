@@ -1,10 +1,10 @@
 
 <?php
-    include_once("config.php");
-	include_once("funciones.php");
+    include('config.php');
+	include('funciones.php');
     // Initialize message variable
 
-	$db = dbconnect();
+	$db = $conn;
     $msg = "";
 
     // If upload button is clicked ...
@@ -87,7 +87,7 @@
     <div id="content">
         
 		<?php
-			$categories = categories(); ?>
+			$categories = categories($db); ?>
 			<?php foreach($categories as $category){ ?>
 			<ul class="category">
 				<li><?php echo $category['categoria_nombre'] ?></li>

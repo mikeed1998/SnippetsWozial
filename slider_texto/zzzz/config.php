@@ -4,7 +4,7 @@
 		$dbuser = "root";
 		$dbpass = "";
 		$dbname = "categoriastres_snippet";
-
+		
 		$conn = new mysqli($host, $dbuser, $dbpass, $dbname);
 
 		if($conn->connect_error){

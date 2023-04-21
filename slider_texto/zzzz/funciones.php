@@ -1,4 +1,6 @@
 <?php
+    include('config.php');
+
     function categories() {
         $conn = dbconnect();
         $sql = "SELECT * FROM cate AS c, cate_n AS n WHERE c.parent_id = n.id";
@@ -22,7 +24,7 @@
     }
 
     function sub_categories($id) {
-        $conn = dbconnect();
+        $conn =  dbconnect();
         $sql = "SELECT * FROM cate WHERE parent_id=$id";
         $result = $conn->query($sql);
         $categories = array();
